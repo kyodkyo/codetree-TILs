@@ -27,19 +27,17 @@ public class Main {
             return;
         }
 
-        list.add(0);
-        chooseLines(k+1);
-        list.remove(list.size()-1);
-
-        list.add(1);
-        chooseLines(k+1);
-        list.remove(list.size()-1);
+        for(int i=0; i<=1; i++){
+            list.add(i);
+            chooseLines(k+1);
+            list.remove(list.size()-1);
+        }
     }
 
     public static void countLines(){
         tempLines = new int[1001];
-
-        int count = 0;
+        
+        int count=0;
         for(int i=0; i<list.size(); i++){
             if (list.get(i) == 1){
                 count++;
