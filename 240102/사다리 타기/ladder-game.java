@@ -83,7 +83,7 @@ public class Main {
 
             for(int depth=1; depth<=maxDepth; depth++){
                 for(int j=0; j<ladders.size(); j++){
-                    if (list.get(ladders.get(i).lineNum - 1) == 0)
+                    if (list.get(ladders.get(j).lineNum - 1) == 0)
                         continue;
 
                     if (ladders.get(j).depth == depth && ladders.get(j).left == curLine){
