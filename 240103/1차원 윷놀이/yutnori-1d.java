@@ -35,7 +35,8 @@ public class Main {
     }
 
     public static void checkHorses(){
-        horses = new int[]{0, 1, 1, 1};
+        horses = new int[k+1];
+        Arrays.fill(horses, 1);
 
         for(int i=0; i<list.size(); i++){
             horses[list.get(i)] += orders[i];
