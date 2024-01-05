@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
 
-    static int max=0;
+    static int max=Integer.MIN_VALUE;
     static char[] exp;
     static ArrayList<Integer> list = new ArrayList<>();
 
@@ -33,19 +33,14 @@ public class Main {
         int result = list.get(exp[0]-'a'); // 첫번째 문자의 숫자값
 
         for(int i=1; i<exp.length; i+=2){
-            if (exp[i]=='+' || exp[i]=='-' || exp[i]=='*')
-                result = calcNum(result, exp[i], i+1);
+            if (exp[i]=='+')
+                result += list.get(exp[i+1]-'a');
+            else if (exp[i]=='-')
+                result -= list.get(exp[i+1]-'a');
+            else if (exp[i]=='*')
+                result *= list.get(exp[i+1]-'a');
         }
 
         return result;
-    }
-
-    public static int calcNum(int result, char c, int idx){
-        if (c=='+')
-            return result + list.get(exp[idx]-'a');
-        else if (c=='-')
-            return result - list.get(exp[idx]-'a');
-        else
-            return result * list.get(exp[idx]-'a');
     }
 }
