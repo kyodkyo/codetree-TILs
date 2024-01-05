@@ -32,6 +32,9 @@ public class Main {
         }
 
         for(int i=1; i<=arr[num]; i++){
+            if (num+i >= n){
+                return;
+            }
             list.add(arr[num+i]);
             findMaxJump(num+i);
             list.remove(list.size()-1);
