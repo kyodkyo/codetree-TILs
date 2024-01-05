@@ -20,7 +20,10 @@ public class Main {
 
     public static void findMaxJump(int num){
         if (num==n-1){
-            min = Math.min(min, list.size());
+            if(min==-1)
+                min = list.size();
+            else
+                min = Math.min(min, list.size());
             return;
         }
         else if (num!=n-1 && arr[num] == 0){
