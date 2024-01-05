@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
 
-    static int n, min=10;
+    static int n, min=Integer.MAX_VALUE;
     static int[] arr;
     static ArrayList<Integer> list = new ArrayList<>();
 
@@ -15,19 +15,14 @@ public class Main {
             arr[i] = sc.nextInt();
 
         findMaxJump(0);
+        if (min == Integer.MAX_VALUE)
+            min = -1;
         System.out.println(min);
     }
 
     public static void findMaxJump(int num){
         if (num==n-1){
-            if(min==-1)
-                min = list.size();
-            else
-                min = Math.min(min, list.size());
-            return;
-        }
-        else if (num!=n-1 && arr[num] == 0){
-            min = -1;
+            min = Math.min(min, list.size());
             return;
         }
 
