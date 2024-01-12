@@ -31,7 +31,7 @@ public class Main {
         for(int i=idx; i<2*n; i++){
             list.add(arr[i]);
             g1 += arr[i];
-            makeGroup(idx+1);
+            makeGroup(i+1);
             g1 -= arr[i];
             list.remove(list.size()-1);
         }
