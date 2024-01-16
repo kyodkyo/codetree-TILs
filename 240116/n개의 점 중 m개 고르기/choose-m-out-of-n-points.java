@@ -37,7 +37,7 @@ public class Main {
 
         for(int i=num; i<p.length; i++){
             list.add(p[i]);
-            choose(num+1);
+            choose(i+1);
             list.remove(list.size()-1);
         }
     }
@@ -47,8 +47,8 @@ public class Main {
 
         for(int i=0; i<list.size()-1; i++){
             for(int j=i+1; j<list.size(); j++){
-                int dx = Math.abs(p[i].x-p[j].x);
-                int dy = Math.abs(p[i].y-p[j].y);
+                int dx = Math.abs(list.get(i).x - list.get(j).x);
+                int dy = Math.abs(list.get(i).x - list.get(j).y);
                 max = Math.max(max, (int)(Math.pow(dx, 2) + Math.pow(dy, 2)));
             }
         }
