@@ -19,10 +19,11 @@ public class Main {
         for(int i=0; i<m; i++){
             String[] line = br.readLine().split(" ");
             board[Integer.parseInt(line[0])][Integer.parseInt(line[1])] = 1;
+            board[Integer.parseInt(line[1])][Integer.parseInt(line[0])] = 1;
         }
 
         dfs(1);
-        System.out.println(count);
+        System.out.println(count-1);
     }
 
     public static void dfs(int num){
