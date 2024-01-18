@@ -23,6 +23,8 @@ public class Main {
         }
 
         dfs(1);
+        if (count==0)
+            count = 1;
         System.out.println(count-1);
     }
 
