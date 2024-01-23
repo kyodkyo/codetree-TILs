@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Main {
 
-    static int n, m, currX=0, currY=0;
+    static int n, m;
     static int[][] board;
     static boolean[][] visited;
     
@@ -21,44 +21,31 @@ public class Main {
             for(int j=0; j<m; j++)
                 board[i][j] = Integer.parseInt(line[j]);
         }
-
-        dfs(currX, currY);
-        if (currX==n-1 && currY==m-1)
-            System.out.println(1);
-        else
-            System.out.println(0);
+        System.out.println(dfs(0, 0));
     }
 
-    public static void dfs(int x, int y){
-        
-        if (isPossible(x+1, y) && checkBoard(x+1, y)){
-            visited[x+1][y] = true;
-            currX = x+1;
-            currY = y;
-            dfs(x+1, y);
-            visited[x+1][y] = false;
-        }
-        if (isPossible(x, y+1) && checkBoard(x, y+1)){
-            visited[x][y+1] = true;
-            currX = x;
-            currY = y+1;
-            dfs(x, y+1);
-            visited[x][y+1] = false;
-        }
-        return;
-    }
+    public static int dfs(int x, int y){
+        if (x==n-1 && y==m-1)
+            return 1;
 
-    public static boolean isPossible(int x, int y){
-        if (0 <= x && x < n && 0 <= y && y < m)
-            return true;
-        return false;
+        int[] dx = {0, 1};
+        int[] dy = {1, 0};
+
+        visited[x][y] = true;
+        for(int i=0; i<2; i++){
+            int currX = x + dx[i];
+            int currY = y + dy[i];
+            if (checkBoard(currX, currY)) {
+                if (dfs(currX, currY) == 1)
+                    return 1;
+            }         
+        }
+        return 0;
     }
 
     public static boolean checkBoard(int x, int y){
-        if (board[x][y] == 0)
-            return false;
-        if (visited[x][y] == true)
-            return false;
-        return true;
+        if (0 <= x && x < n && 0 <= y && y < m && board[x][y]==1 && !visited[x][y])
+            return true;
+        return false;
     }
 }
