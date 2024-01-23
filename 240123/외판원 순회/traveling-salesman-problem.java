@@ -43,8 +43,13 @@ public class Main {
         int sum = 0;
 
         list.add(0);
-        for(int t=0; t<list.size()-1; t++)
+        for(int t=0; t<list.size()-1; t++){
+            if (board[list.get(t)][list.get(t+1)] == 0){
+                list.remove(list.size()-1);
+                return Integer.MAX_VALUE;
+            }
             sum += board[list.get(t)][list.get(t+1)];
+        }
         list.remove(list.size()-1);
 
         return sum;
