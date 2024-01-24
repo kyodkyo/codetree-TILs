@@ -44,10 +44,10 @@ public class Main {
         int[] dy = {1, 0, 0, -1};
 
         for(int i=0; i<4; i++){
-            int currX = x + dx[i];
-            int currY = y + dy[i];
-            if (checkBoard(currX, currY))
-                count += dfs(currX, currY);
+            x += dx[i];
+            y += dy[i];
+            if (checkBoard(x, y))
+                count += dfs(x, y);
         }
         return count;
     }
