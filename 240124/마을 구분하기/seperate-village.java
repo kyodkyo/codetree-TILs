@@ -31,9 +31,8 @@ public class Main {
         }
         System.out.println(total);
         
-        int[] arr = list.stream().mapToInt(i->i).toArray();
-        Arrays.sort(arr);
-        for(int t : arr)
+        Collections.sort(list);
+        for(int t : list)
             System.out.println(t);
     }
 
