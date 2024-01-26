@@ -31,10 +31,10 @@ public class Main {
 
         int max = 0, count = 0;
         for(int num : list){
-            if (num >= 4){
-                max = Math.max(max, num);
+            if (num >= 4)
                 count++;
-            }
+            max = Math.max(max, num);
+
         }
         System.out.printf("%d %d", count, max);
     }
