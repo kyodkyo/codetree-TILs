@@ -33,7 +33,10 @@ public class Main {
 
         for(int i=0; i<k; i++){
             String[] line = br.readLine().split(" ");
-            q.add(new Point(Integer.parseInt(line[0])-1, Integer.parseInt(line[1])-1));
+            int x = Integer.parseInt(line[0])-1;
+            int y = Integer.parseInt(line[1])-1;
+            q.add(new Point(x, y));
+            visited[x][y] = true;
             bfs();
         }
 
