@@ -31,8 +31,8 @@ public class Main {
             }
         }
 
-        points = new int[m][2];
-        for(int i=0; i<m; i++){
+        points = new int[k][2];
+        for(int i=0; i<k; i++){
             String[] line = br.readLine().split(" ");
             points[i][0] = Integer.parseInt(line[0]) - 1;            
             points[i][1] = Integer.parseInt(line[1]) - 1;            
