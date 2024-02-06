@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
     static int n, m;
@@ -7,16 +8,19 @@ public class Main {
     static Queue<int[]> q = new LinkedList<>();
 
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        n = sc.nextInt();
-        m = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        String[] input = br.readLine().split(" ");
+        n = Integer.parseInt(input[0]);
+        m = Integer.parseInt(input[1]);
 
         map = new int[n][m];
         visited = new boolean[n][m];
         for(int i=0; i<n; i++){
+            String[] line = br.readLine().split(" ");
             for(int j=0; j<m; j++)
-                map[i][j] = sc.nextInt();
+                map[i][j] = Integer.parseInt(line[j]);
         }
 
         System.out.println(bfs());
