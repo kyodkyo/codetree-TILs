@@ -20,6 +20,11 @@ public class Main {
         int ex = Integer.parseInt(line[2]) - 1;
         int ey = Integer.parseInt(line[3]) - 1;
 
+        if (sx==ex && sy==ey){
+            System.out.println(0);
+            return ;
+        }
+
         bfs(sx, sy, ex, ey);
         if (answer == Integer.MAX_VALUE)
             answer = -1;
