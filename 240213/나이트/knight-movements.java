@@ -20,11 +20,6 @@ public class Main {
         int ex = Integer.parseInt(line[2]) - 1;
         int ey = Integer.parseInt(line[3]) - 1;
 
-        if (sx==ex && sy==ey){
-            System.out.println(0);
-            return ;
-        }
-
         bfs(sx, sy, ex, ey);
         if (answer == Integer.MAX_VALUE)
             answer = -1;
@@ -37,10 +32,13 @@ public class Main {
         int[] dy = {1, 2, 2, 1, -1, -2, -2, -1};
 
         q.add(new int[]{sx, sy});
+        visited[sx][sy] = true;
         while(!q.isEmpty()){
             int[] temp = q.poll();
             int x = temp[0];
             int y = temp[1];
+
+
 
             for(int i=0; i<8; i++){
                 int nx = x + dx[i];
