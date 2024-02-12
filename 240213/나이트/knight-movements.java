@@ -33,12 +33,11 @@ public class Main {
 
         q.add(new int[]{sx, sy});
         visited[sx][sy] = true;
+        
         while(!q.isEmpty()){
             int[] temp = q.poll();
             int x = temp[0];
             int y = temp[1];
-
-
 
             for(int i=0; i<8; i++){
                 int nx = x + dx[i];
