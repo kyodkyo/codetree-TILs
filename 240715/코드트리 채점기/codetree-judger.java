@@ -21,7 +21,7 @@ class Url implements Comparable<Url> {
 };
 
 public class Main {
-    public static final int MAX_D = 300, MAX_N = 5000, INF = 1987654321;
+    public static final int MAX_D = 300, MAX_N = 50000, INF = 1987654321;
     public static int q, n, cnt, ans;
     
     public static TreeSet[] isInReadyq = new TreeSet[MAX_D + 1];
